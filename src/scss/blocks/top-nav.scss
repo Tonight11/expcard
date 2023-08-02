@@ -1,0 +1,89 @@
+.top-nav {
+	background-color: var(--second-black);
+
+	color: var(--font-color);
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 200;
+	}
+	@media (max-width: 687px) {
+		display: none;
+	}
+
+	&__inner {
+		padding: 0 15px;
+
+		@media (max-width: 687px) {
+			flex-direction: column;
+			padding: 20px 0 0;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__container {
+	}
+
+	&__left {
+		gap: 16px;
+		padding: 14px 0;
+		@media (max-width: 687px) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 15px;
+			padding: 0;
+			margin-bottom: 15px;
+			width: 100%;
+		}
+	}
+
+	&__number {
+		gap: 5px;
+		font-weight: 500;
+		font-size: 14px;
+		color: var(--font-color);
+		transition: all 0.3s linear;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main-color);
+			}
+		}
+
+		& span {
+			font-weight: 300;
+			font-size: 14px;
+			font-style: italic;
+
+			@media (max-width: 1019px) {
+				display: none;
+			}
+		}
+	}
+
+	&__email {
+		gap: 8px;
+		font-size: 14px;
+		color: var(--font-color);
+		transition: all 0.3s linear;
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main-color);
+			}
+		}
+	}
+
+	&__right {
+		@media (max-width: 687px) {
+			width: 100%;
+
+			& .btn {
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.breadcrumbs {
+	padding: 14px 0;
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+	}
+	&__arrow path{
+		fill: var(--white);
+	}
+	&__link {
+		color: var(--white);
+		font-family: 'Roboto';
+		font-size: 14px;
+		font-weight: 400;
+		line-height: normal;
+		&.active {
+			color: #ee6101;
+		}
+	}
+}

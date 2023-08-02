@@ -1,0 +1,133 @@
+.partner {
+	&__content {
+		background-image: url('../img/about_banner.webp'),
+			url('../img/about_banner.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 64px 0;
+		position: relative;
+		color: white;
+
+		@media (max-width: 640px) {
+			padding: 32px 0;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		font-size: 36px;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+		@media (max-width: 1019px) {
+			font-size: 30px;
+		}
+		@media (max-width: 640px) {
+			font-size: 26px;
+		}
+	}
+
+	&__desc {
+		font-family: 'Inter';
+		font-size: 20px;
+		font-weight: 400;
+		line-height: normal;
+		margin-bottom: 24px;
+		@media (max-width: 1019px) {
+			font-size: 18px;
+		}
+		@media (max-width: 440px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__text {
+		color: var(--font-color);
+		font-family: 'Inter';
+		font-size: 18px;
+		font-weight: 400;
+		line-height: normal;
+		margin-bottom: 16px;
+		@media (max-width: 440px) {
+			margin-bottom: 15px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	&__body {
+		padding: 24px 0;
+	}
+}
+
+// slider
+
+.our-partners {
+	padding: 52px 0;
+	&__container {
+	}
+	&__title {
+	}
+}
+
+.swiper-container-free-mode {
+	width: 100%;
+	max-width: 100%;
+	min-height: 100px;
+	overflow: hidden;
+	padding: 20px 0;
+}
+
+.swiper-container-free-mode > .swiper-wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+	transition-timing-function: linear;
+}
+
+.swiper-slide-partner {
+	width: auto !important;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 62px;
+	text-align: center;
+
+	& img {
+		height: 100px;
+	}
+}

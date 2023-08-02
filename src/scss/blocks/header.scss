@@ -1,0 +1,100 @@
+.header {
+	padding: 16px 0;
+	&__container {
+	}
+
+	&__inner {
+		padding: 0 15px;
+
+		@media (max-width: 687px) {
+			padding: 0;
+		}
+	}
+
+	&__left {
+		gap: 65px;
+		@media (max-width: 1019px) {
+			gap: 40px;
+		}
+	}
+
+	&__logo {
+		position: relative;
+
+		& img {
+			@media (max-width: 1019px) {
+				width: 90px;
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			right: -25%;
+			width: 1px;
+			height: 90%;
+			background-color: var(--main-color);
+			transform: translateX(-50%);
+
+			@media (max-width: 1019px) {
+				right: -20px;
+			}
+			@media (max-width: 828px) {
+				content: none;
+			}
+		}
+	}
+
+	&__logo-icon {
+	}
+
+	&__text {
+		max-width: 300px;
+		color: var(--font-color);
+		font-size: 15px;
+		font-weight: 600;
+
+		@media (max-width: 1019px) {
+			font: 10px/16px Montserrat;
+		}
+		@media (max-width: 828px) {
+			display: none;
+		}
+	}
+
+	&__right {
+		gap: 15px;
+		// @media (max-width: 640px) {
+		// 	flex-direction: column;
+		// 	align-items: flex-start;
+		// 	gap: 8px;
+		// 	padding: 0;
+		// 	margin-bottom: 5px;
+
+		// 	& .btn {
+		// 		width: 100%;
+		// 	}
+		// }
+	}
+
+	&__btn {
+		& .btn-text {
+			@media (max-width: 510px) {
+				display: none;
+			}
+		}
+		& svg {
+			width: 20px;
+			height: 20px;
+			@media (max-width: 767px) {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+	&__btn-icon {
+		width: 20px;
+		height: 20px;
+	}
+}

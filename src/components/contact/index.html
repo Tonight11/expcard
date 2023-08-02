@@ -1,0 +1,151 @@
+<section class="contacts">
+	<div class="contacts__container container">
+		<h1 class="contacts__title">Наши контакты</h1>
+		<div class="contacts__connection">
+			<h2 class="contacts__name">Связаться с нами</h2>
+			<a href="#" class="footer__contact top-nav__number flex --align-center">
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					class="call footer__call-icon"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<g clip-path="url(#clip0_1_58)" id="call">
+						<path
+							d="M13.34 10.2533C12.52 10.2533 11.7267 10.12 10.9867 9.88C10.7533 9.8 10.4933 9.86 10.3133 10.04L9.26667 11.3533C7.38 10.4533 5.61333 8.75333 4.67333 6.8L5.97333 5.69333C6.15333 5.50667 6.20667 5.24667 6.13333 5.01333C5.88667 4.27333 5.76 3.48 5.76 2.66C5.76 2.3 5.46 2 5.1 2H2.79333C2.43333 2 2 2.16 2 2.66C2 8.85333 7.15333 14 13.34 14C13.8133 14 14 13.58 14 13.2133V10.9133C14 10.5533 13.7 10.2533 13.34 10.2533Z"
+							fill="#EE6101"
+						/>
+					</g>
+					<defs>
+						<clipPath id="clip0_1_58">
+							<rect width="16" height="16" fill="white" />
+						</clipPath>
+					</defs>
+				</svg>
+
+				8-800-777-14-97
+				<span>(горячая линия)</span>
+			</a>
+			<a href="#" class="footer__contact top-nav__number flex --align-center">
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					class="call footer__call-icon"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<g clip-path="url(#clip0_1_58)" id="call">
+						<path
+							d="M13.34 10.2533C12.52 10.2533 11.7267 10.12 10.9867 9.88C10.7533 9.8 10.4933 9.86 10.3133 10.04L9.26667 11.3533C7.38 10.4533 5.61333 8.75333 4.67333 6.8L5.97333 5.69333C6.15333 5.50667 6.20667 5.24667 6.13333 5.01333C5.88667 4.27333 5.76 3.48 5.76 2.66C5.76 2.3 5.46 2 5.1 2H2.79333C2.43333 2 2 2.16 2 2.66C2 8.85333 7.15333 14 13.34 14C13.8133 14 14 13.58 14 13.2133V10.9133C14 10.5533 13.7 10.2533 13.34 10.2533Z"
+							fill="#EE6101"
+						/>
+					</g>
+					<defs>
+						<clipPath id="clip0_1_58">
+							<rect width="16" height="16" fill="white" />
+						</clipPath>
+					</defs>
+				</svg>
+				8-495-748-14-08
+				<span>(многоканальный)</span>
+			</a>
+			<a href="#" class="footer__contact top-nav__number flex --align-center">
+				<svg
+					width="16"
+					height="16"
+					class="email"
+					viewBox="0 0 16 16"
+					fill="none footer__call-icon"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<g clip-path="url(#clip0_1_64)" id="email">
+						<path
+							d="M13.3333 2.66666H2.66667C1.93333 2.66666 1.34 3.26666 1.34 3.99999L1.33333 12C1.33333 12.7333 1.93333 13.3333 2.66667 13.3333H13.3333C14.0667 13.3333 14.6667 12.7333 14.6667 12V3.99999C14.6667 3.26666 14.0667 2.66666 13.3333 2.66666ZM13.3333 5.33332L8 8.66666L2.66667 5.33332V3.99999L8 7.33332L13.3333 3.99999V5.33332Z"
+							fill="#EE6101"
+						/>
+					</g>
+					<defs>
+						<clipPath id="clip0_1_64">
+							<rect width="16" height="16" fill="white" />
+						</clipPath>
+					</defs>
+				</svg>
+				info@expcard.ru
+			</a>
+		</div>
+		<div class="contacts__credentials cred-contact">
+			<h2 class="contacts__name">Реквизиты:</h2>
+			<p class="cred-contact__item">ИНН: 7720652281</p>
+			<p class="cred-contact__item">КПП: 771301001</p>
+			<p class="cred-contact__item">ОГРН: 1097746027598</p>
+			<p class="cred-contact__item">БИК: 044525225</p>
+			<p class="cred-contact__item">Р/С: 40702810638000042055</p>
+			<p class="cred-contact__item">Время работы:</p>
+			<p class="cred-contact__item">Пн-Пт, с 10 до 18</p>
+			<p class="cred-contact__item">
+				Место нахождения:
+				<b> Дмитровское шоссе д. 149 (вход с Дмитровского шоссе) </b>
+			</p>
+
+			<p class="cred-contact__item">
+				Филиал:
+				<b>
+					Россия, Липецкая обл., Чаплыгинский р-он, г.Чаплыгин, ул.Учительская,
+					д.2
+				</b>
+			</p>
+		</div>
+		<div class="contacts__main">
+			<div class="contacts__left">
+				<h4 class="contacts__name">Остались вопросы?</h4>
+				<form @submit.prevent="sendQuestion">
+					<div class="contacts__top">
+						<input
+							v-model="name"
+							type="text"
+							placeholder="Как к вам обращаться?"
+							:class="{ 'err': errors.name }"
+						/>
+						<input
+							ref="questionPhone"
+							id="question-number"
+							@input="checkQuestionPhoneValidate"
+							type="text"
+							placeholder="Контактный телефон*"
+							:class="{ 'err': errors.phone }"
+						/>
+					</div>
+					<textarea
+						v-model="qeustionText"
+						class="contacts__textarea"
+						name=""
+						id=""
+						rows="10"
+						placeholder="Ваше сообщение"
+					></textarea>
+					<div class="contacts__check">
+						<input type="checkbox" id="check" name="check" v-model="check" />
+						<label :class="{ 'err': errors.check }" for="check">
+							Я согласен с
+							<a href="policy.html">политикой конфиденциальности</a>
+						</label>
+					</div>
+
+					<button class="contacts__btn btn">Задать вопрос</button>
+				</form>
+			</div>
+			<div class="contacts__right">
+				<h4 class="contacts__name">Как к нам добраться</h4>
+				<iframe
+					src="https://yandex.com/map-widget/v1/?um=constructor%3A9ce6a959b795a33392a2759417240f31ad0d755c1ee1217a1c525b6b0eaaa60d&amp;source=constructor"
+					width="100%"
+					height="400"
+					frameborder="0"
+				></iframe>
+			</div>
+		</div>
+	</div>
+</section>

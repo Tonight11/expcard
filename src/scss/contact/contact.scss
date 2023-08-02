@@ -1,0 +1,85 @@
+.contacts {
+	&__title {
+		font: 40px/50px Montserrat;
+		text-transform: uppercase;
+		margin: 0 0 53px;
+	}
+
+	&__connection {
+		margin-bottom: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&__name {
+		font: 27px/33px Montserrat;
+		margin: 0 0 30px;
+
+		@media only screen and (max-width: 1019px) {
+			font: 24px/29px Montserrat;
+			margin: 0 0 20px;
+		}
+
+		@media only screen and (max-width: 640px) {
+			font: 20px/24px Montserrat;
+			margin: 0 0 11px;
+		}
+	}
+
+	&__credentials {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin-bottom: 50px;
+	}
+
+	&__main {
+		display: flex;
+		gap: 50px;
+		@media screen and (max-width: 740px) {
+			flex-direction: column;
+			gap: 50px;
+		}
+	}
+
+	&__left {
+		flex: 1;
+		
+	}
+
+	&__top {
+		display: flex;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__right {
+		flex: 1;
+	}
+
+	&__textarea {
+		margin-bottom: 20px;
+	}
+
+	&__check {
+		margin-bottom: 20px;
+	}
+
+	&__btn {
+		width: 100%;
+	}
+}
+
+.footer {
+	&__contact {
+	}
+
+	&__call-icon {
+	}
+}
+
+.cred-contact {
+	&__item {
+	}
+}

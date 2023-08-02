@@ -1,0 +1,128 @@
+.about {
+	padding: 0 0 30px;
+	&__container {
+	}
+
+	&__img {
+		& img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+
+	&__top {
+		padding-top: 30px;
+		padding-left: 100px;
+		position: relative;
+		@media (max-width: 847px) {
+			padding-left: 0;
+			text-align: center;
+		}
+		// @media (max-width: 640px) {
+		// 	padding-left: 60px;
+		// }
+		// @media (max-width: 440px) {
+		// 	padding-left: 0;
+		// }
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 35%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 80px;
+			height: 2px;
+			background-color: var(--main-color);
+			@media (max-width: 847px) {
+				content: none;
+			}
+			// @media (max-width: 640px) {
+			// 	width: 50px;
+			// 	top: 32%;
+			// }
+			// @media (max-width: 440px) {
+			// 	width: 35px;
+			// 	top: 10%;
+			// }
+		}
+	}
+
+	&__title {
+		color: var(--font-color);
+		font-size: 36px;
+		font-weight: 700;
+		margin-bottom: 10px;
+
+		@media (max-width: 1019px) {
+			font-size: 30px;
+		}
+
+		@media (max-width: 640px) {
+			font-size: 26px;
+		}
+	}
+
+	&__desc {
+		color: var(--font-color);
+		font-family: 'Inter';
+		font-size: 20px;
+		font-weight: 400;
+		margin-bottom: 27px;
+		max-width: 570px;
+		@media (max-width: 1019px) {
+			font-size: 18px;
+		}
+		@media (max-width: 847px) {
+			width: 100%;
+			max-width: 100%;
+		}
+		@media (max-width: 440px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__text {
+		color: var(--font-color);
+		font-family: 'Inter';
+		font-size: 18px;
+		font-weight: 400;
+		margin-bottom: 35px;
+		@media (max-width: 640px) {
+			font-size: 16px;
+		}
+	}
+}
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.big-image {
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 2;
+
+	@media (max-width: 540px) {
+		grid-row: auto;
+		grid-column: auto;
+	}
+
+	& img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.small-image {
+	& img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.second-about__text {
+	margin: 0;
+}

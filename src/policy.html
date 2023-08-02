@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+@@include('components/page-blocks/_head.html',{
+"lang":"ru",
+"title":"EXPCARD PARNTER",
+"description":"В своём стремлении улучшить пользовательский опыт мы упускаем, что реплицированные с зарубежных источников, современные исследования представлены.",
+"keywords":"Эксперсс-карт, Топливные карты, Expcard, Express-card",
+"favicon":"img/favicons/favicon",
+})
+
+<body id="app" v-cloak>
+	<a class="main-banner" href="partner.html" >
+		<div class="main-banner__container container">
+			<picture>
+				<source type="image/webp" srcset="img/gazprom1.jpg" />
+				<source type="image/jpeg" srcset="img/gazprom1.jpg" />
+				<img src="img/gazprom1.jpg" alt="" />
+			</picture>
+		</div>
+</a>
+	@@include('components/page-blocks/_top-nav.html')
+	@@include('components/page-blocks/_header.html')
+	@@include('components/page-blocks/_nav.html')
+	<div class="breadcrumbs">
+		<div class="breadcrumbs__container container">
+		
+		<a href="index.html" class="breadcrumbs__link">Главная</a>
+		@@include('components/bem-blocks/_arrow.html')
+		<div class="breadcrumbs__link active">Политика кофиденциальности</div>
+	</div>
+	</div>
+	<main class="main">
+		@@include('components/policy/index.html')
+	</main>
+	@@include('components/page-blocks/_footer.html')
+	@@include('components/bem-blocks/_top-btn.html')
+	@@include('components/page-blocks/_scripts.html')
+</body>
+
+</html>
