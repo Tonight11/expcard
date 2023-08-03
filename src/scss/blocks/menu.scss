@@ -29,7 +29,7 @@
 		transition: all 0.3s linear;
 
 		&.active {
-			background-color: #333;
+			background-color: #333 !important;
 		}
 
 		&.gazprom {
@@ -180,7 +180,7 @@
 			text-align: left;
 
 			&.active {
-				background-color: var(--main-color);
+				background-color: var(--main-color) !important;
 			}
 			&.active:hover {
 				background-color: var(--main-color);

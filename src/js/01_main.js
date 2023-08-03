@@ -364,6 +364,24 @@ function moveBurgerMenu() {
 	}
 }
 
+function activeLink() {
+	const currentPage = window.location.pathname;
+	const navLinks = document.querySelectorAll('a.menu__link');
+
+	if (currentPage === '/' || currentPage === 'index.html') {
+		navLinks.item(0).classList.add('active');
+		return;
+	}
+
+	navLinks.forEach(link => {
+		const linkPath = link.getAttribute('href').split('.')[0];
+
+		if (linkPath === currentPage.split('.')[0]) {
+			link.classList.add('active');
+		}
+	});
+}
+
 const partnerA = document.querySelector('.partner-a');
 const partnerAk = document.querySelector('.partner-ak');
 const partnerAkado = document.querySelector('.partner-akado');
@@ -396,6 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	initializeBurgerMenu();
 	menu.addEventListener('click', handleMenuClick);
 	moveBurgerMenu();
+	activeLink();
 	const currTheme = defineTheme();
 	if (currTheme === 'dark') {
 		btnThemeLight.style.display = 'none';
