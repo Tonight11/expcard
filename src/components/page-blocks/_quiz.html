@@ -1,0 +1,85 @@
+<section class="quiz">
+	<div class="quiz__container container">
+		<h2 class="quiz__title sm-title">Рассчитайте экономию сами!</h2>
+		<p class="quiz__description">
+			Пройдите опрос и узнайте сколько денег вы сможете экономить только за счет
+			скидки на топливо
+		</p>
+		<div class="quiz__inner">
+			<div class="quiz__content" v-show="currentStep === 1">
+				<h3 class="quiz__name">Выберите один из вариантов:</h3>
+				<div class="quiz__options">
+					<div
+						class="quiz__option"
+						v-for="(option, index) in options"
+						:key="index"
+					>
+						<input
+							class="quiz__radio-btn"
+							type="radio"
+							:value="option"
+							v-model="selectedOption"
+							:id="option"
+						/>
+						<label :for="option"> {{ option }} </label>
+					</div>
+				</div>
+			</div>
+			<div class="quiz__content" v-show="currentStep === 2">
+				<h3 class="quiz__name">Выберите цену:</h3>
+				<input
+					class="quiz__range"
+					type="range"
+					v-model="selectedPrice"
+					min="0"
+					max="1000000"
+				/>
+				<p>Цена: {{ selectedPrice }} руб.</p>
+			</div>
+			<form
+				@submit.prevent="submitQuiz"
+				class="quiz__content quiz__form"
+				v-show="currentStep === 3"
+			>
+				<h3 class="quiz__name">Введите имя и номер:</h3>
+				<input
+					v-model.trim="name"
+					@input="filterName"
+					type="text"
+					placeholder="Ваше Имя*"
+					:class="{ 'err': errors.name }"
+				/>
+				<input
+					ref="quizNumber"
+					id="quiz-number"
+					@input="checkQuizPhoneValidate"
+					type="text"
+					placeholder="Контактный телефон*"
+					:class="{ 'err': errors.phone }"
+				/>
+				<div>
+					<input type="checkbox" id="check" name="check" v-model="check" />
+					<label :class="{ 'err': errors.check }" for="check">
+						Я согласен с
+						<a href="policy.html">политикой конфиденциальности</a>
+					</label>
+				</div>
+			</form>
+			<div class="quiz__bottom">
+				<span v-if="currentStep === 1"></span>
+					<button v-else class="quiz__btn" @click="currentStep--">Назад</button>
+					<div class="quiz__circle">
+						<svg class="quiz__svg" >
+							<circle class="quiz__progress" cx="35" cy="35" r="30" :style="{
+								'stroke-dashoffset': 190 - (190 * currentStep / 3)
+							}"></circle>
+						</svg>
+            <span class="quiz__indicator">{{currentStep}}/3</span>
+        	</div>
+					<button v-if="currentStep < 3"  class="quiz__btn" @click="nextStep">Далее</button>
+					<button v-else class="quiz__btn" @click.prevent="submitQuiz">Отправить</button>
+				</div>
+
+		</div>
+	</div>
+</section>

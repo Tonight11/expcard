@@ -35,7 +35,13 @@
 		&.gazprom {
 			text-align: center;
 			justify-content: center;
-			background: #302d66;
+			background-color: #302d66;
+			padding-left: 35px;
+			position: relative;
+			& img {
+				position: absolute;
+				left: 10px;
+			}
 
 			@media (hover: hover) {
 				&:hover {

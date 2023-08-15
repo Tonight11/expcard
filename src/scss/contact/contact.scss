@@ -48,26 +48,36 @@
 	}
 
 	&__left {
+		display: flex;
+		flex-direction: column;
 		flex: 1;
+		justify-content: space-around;
+
+		& form {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
 	}
 
 	&__top {
 		display: flex;
 		gap: 20px;
-		margin-bottom: 20px;
 	}
 
 	&__right {
 		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	&__textarea {
-		margin-bottom: 20px;
 		resize: none;
 	}
 
 	&__check {
-		margin-bottom: 20px;
 	}
 
 	&__btn {

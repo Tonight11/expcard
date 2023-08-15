@@ -193,7 +193,75 @@ createApp({
 			});
 		});
 
+		const options = ref(['1-2', '3-5', '6-10', '11-30', '30-50']);
+
+		const currentStep = ref(1);
+		const selectedOption = ref('1-2');
+		const selectedPrice = ref(50);
+		const quizNumber = ref();
+
+		const validateQuizPhone = () => {
+			let phoneValue = quizNumber.value ? quizNumber.value.value : '';
+			if (phoneValue.length === 17) {
+				phoneValue = phoneValue.substring(phoneValue.length - 1, 1);
+			}
+			if (phoneValue.length === 0) {
+				errors.value.phone = true;
+			} else if (!phoneRegex.test(phoneValue)) {
+				errors.value.phone = true;
+			} else {
+				errors.value.phone = false;
+			}
+		};
+
+		const checkQuizPhoneValidate = () => {
+			if (liveErr.value) {
+				validateQuizForm();
+			}
+		};
+
+		const validateQuizForm = () => {
+			validateName();
+			validateQuizPhone();
+			validateCheck();
+		};
+
+		const nextStep = () => {
+			currentStep.value++;
+		};
+
+		const submitQuiz = () => {
+			validateQuizForm();
+
+			if (!isFormValid.value) {
+				liveErr.value = true;
+				return;
+			}
+
+			try {
+				alert(JSON.stringify({
+					'Цена': selectedPrice.value,
+					'Что-то': selectedOption.value,
+					'Имя': name.value,
+					'Номер': quizNumber.value.value
+				}));
+			} catch (error) {
+				console.log(error);
+			} finally {
+				resetForm();
+			}
+		};
+
 		return {
+			options,
+			quizNumber,
+			validateQuizPhone,
+			currentStep,
+			selectedOption,
+			selectedPrice,
+			checkQuizPhoneValidate,
+			nextStep,
+			submitQuiz,
 			modal,
 			openModal,
 			closeModal,
@@ -214,6 +282,8 @@ createApp({
 		};
 	},
 }).mount('#app');
+
+function quiz() {}
 
 const swiper = new Swiper('.swiper-first', {
 	navigation: {
@@ -485,10 +555,12 @@ accordionItems.forEach(item => {
 });
 
 const phone = document.getElementById('phone');
+const phoneQuiz = document.getElementById('quiz-number');
 const phoneFooter = document.getElementById('phone-footer');
 
 const maskOptions = {
 	mask: '+{7}(000)000-00-00',
 };
+const maskQuiz = IMask(phoneQuiz, maskOptions);
 const mask = IMask(phone, maskOptions);
 const maskFooter = IMask(phoneFooter, maskOptions);
