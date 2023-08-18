@@ -65,7 +65,10 @@
 					</label>
 				</div>
 			</form>
-			<div class="quiz__bottom">
+			<div class="quiz__content" v-show="currentStep === 4">
+				Спасибо! В ближайщее время мы с вами свяжемся!
+			</div>
+			<div class="quiz__bottom" v-if="currentStep < 4">
 				<span v-if="currentStep === 1"></span>
 					<button v-else class="quiz__btn" @click="currentStep--">Назад</button>
 					<div class="quiz__circle">

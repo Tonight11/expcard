@@ -170,7 +170,6 @@ createApp({
 		const resetForm = () => {
 			name.value = '';
 			phone.value.value = '';
-			questionPhone.value.value = '';
 			qeustionText.value = '';
 			email.value = '';
 			check.value = false;
@@ -179,6 +178,8 @@ createApp({
 			errors.value.phone = false;
 			errors.value.check = false;
 			errors.value.email = false;
+			quizNumber.value.value = '';
+			questionPhone.value.value = '';
 		};
 
 		const isFormValid = computed(() => {
@@ -245,6 +246,7 @@ createApp({
 					'Имя': name.value,
 					'Номер': quizNumber.value.value
 				}));
+				currentStep.value++
 			} catch (error) {
 				console.log(error);
 			} finally {
@@ -535,24 +537,28 @@ btnTheme.forEach(i => {
 });
 
 const accordionItems = document.querySelectorAll('.question__item');
+
 accordionItems.forEach(item => {
-	const title = item.querySelector('.question__name');
+    const title = item.querySelector('.question__name');
 
-	title.addEventListener('click', () => {
-		if (item.classList.contains('active')) {
-			item.classList.remove('active');
-			return;
-		}
+    title.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
 
-		const openItem = document.querySelectorAll('.question__item.active');
-
-		openItem.forEach(el => {
-			el.classList.remove('active');
-		});
-
-		item.classList.add('active');
-	});
+        closeAllItems();
+        
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
 });
+
+function closeAllItems() {
+    const openItems = document.querySelectorAll('.question__item.active');
+    
+    openItems.forEach(item => {
+        item.classList.remove('active');
+    });
+}
 
 const phone = document.getElementById('phone');
 const phoneQuiz = document.getElementById('quiz-number');

@@ -10,13 +10,14 @@
 	}
 
 	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
 		color: var(--font-color);
 	}
 
 	&__form {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
 	}
 
 	&__title {
@@ -71,6 +72,7 @@
 				border-radius: 50%;
 				background-color: var(--main-color);
 				opacity: 0;
+				transition: all 0.3s linear;
 			}
 		}
 	}

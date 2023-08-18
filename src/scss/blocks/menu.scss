@@ -28,6 +28,10 @@
 		gap: 8px;
 		transition: all 0.3s linear;
 
+		@media screen and (max-width: 1081px) {
+			font-size: 12px;
+		}
+
 		&.active {
 			background-color: #333 !important;
 		}
@@ -41,8 +45,12 @@
 			& img {
 				position: absolute;
 				left: 10px;
-			}
 
+				@media screen and (max-width: 996px) {
+					position: static;
+				}
+			}
+		
 			@media (hover: hover) {
 				&:hover {
 					background-color: #302d66;
