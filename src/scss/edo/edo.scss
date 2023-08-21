@@ -1,0 +1,21 @@
+.edo {
+	padding-bottom: 70px;
+	&__container {
+	}
+
+	&__inner {
+		color: var(--font-color);
+	}
+
+	&__content * {
+		font-size: 18px;
+		line-height: 1.6;
+
+		@media screen and (max-width: 1019px) {
+			font-size: 15px;
+		}
+	}
+
+	&__title {
+	}
+}

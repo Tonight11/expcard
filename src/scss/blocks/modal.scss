@@ -69,9 +69,6 @@
 	flex-direction: column;
 	padding: 0 5px;
 	gap: 24px;
-	& small {
-		color: var(--font-color);
-	}
 	@media (max-width: 499px) {
 		padding: 0;
 		gap: 15px;

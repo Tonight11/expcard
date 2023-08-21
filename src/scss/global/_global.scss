@@ -67,6 +67,7 @@ h6 {
 
 a {
 	text-decoration: none;
+	color: var(--main-color);
 }
 
 .top-nav svg,
@@ -128,7 +129,8 @@ a {
 	display: none;
 }
 
-input, textarea {
+input,
+textarea {
 	width: 100%;
 	padding: 10px;
 	outline: none;
@@ -156,5 +158,45 @@ input, textarea {
 	&.err {
 		border: 1px solid #ee0101;
 		background: #ffcbcb;
+	}
+}
+
+.title {
+	margin: 0 0 53px;
+
+	font: 600 40px/50px Montserrat;
+	text-transform: uppercase;
+	color: var(--font-color);
+
+	&.faq {
+		text-align: center;
+	}
+
+	@media screen and (max-width: 1019px) {
+		font: 600 32px/36px Montserrat;
+	}
+	@media screen and (max-width: 640px) {
+		font: 600 22px/27px Montserrat;
+	}
+	@media screen and (max-width: 480px) {
+		margin-bottom: 33px;
+	}
+}
+
+.md-title {
+	margin: 0 0 34px;
+
+	font: 500 27px/23px Montserrat;
+	color: var(--font-color);
+
+	@media screen and (max-width: 1019px) {
+		margin: 0 0 20px;
+
+		font: 500 24px/24px Montserrat;
+	}
+	@media screen and (max-width: 640px) {
+		margin: 0 0 17px;
+
+		font: 500 20px/24px Montserrat;
 	}
 }

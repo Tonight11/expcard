@@ -23,12 +23,12 @@
 	&__title {
 		margin-bottom: 10px;
 		text-align: center;
-		color: var(--font-color)
+		color: var(--font-color);
 	}
 
 	&__description {
 		margin-bottom: 30px;
-		color: var(--font-color)
+		color: var(--font-color);
 	}
 
 	&__name {
@@ -99,16 +99,15 @@
 	&__circle {
 		position: relative;
 	}
-	
+
 	&__svg {
 		transform: rotate(-90deg);
 		width: 70px;
 		height: 70px;
 		position: relative;
 	}
-	
-	&__progress {
 
+	&__progress {
 		fill: transparent;
 		stroke: var(--main-color);
 		stroke-width: 5;
@@ -126,8 +125,6 @@
 		transform: translate(-50%, -50%);
 	}
 }
-
-
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 	input[type='range'] {
@@ -158,6 +155,17 @@ input[type='range']::-moz-range-progress {
 }
 input[type='range']::-moz-range-track {
 	background-color: var(--black);
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	background-color: var(--main-color);
+	border: 0;
+	border-radius: 1.5rem;
+	transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+	appearance: none;
 }
 /* IE*/
 input[type='range']::-ms-fill-lower {

@@ -8,33 +8,27 @@
 })
 
 <body id="app" v-cloak>
-	<!-- <a class="main-banner" href="/partner.html" >
-		<div class="main-banner__container container">
-			<picture>
-				<source type="image/webp" srcset="img/gazprom1.jpg" />
-				<source type="image/jpeg" srcset="img/gazprom1.jpg" />
-				<img src="img/gazprom1.jpg" alt="" />
-			</picture>
-		</div>
-</a> -->
 	@@include('components/page-blocks/_top-nav.html')
 	@@include('components/page-blocks/_header.html')
 	@@include('components/page-blocks/_nav.html')
 	<div class="breadcrumbs">
 		<div class="breadcrumbs__container container">
-			<a href="/index.html" class="breadcrumbs__link">Главная</a>
-			@@include('components/bem-blocks/_arrow.html')
-			<div class="breadcrumbs__link active">Вопросы и ответы </div>
-		</div>
+		<a href="/index.html" class="breadcrumbs__link">Главная</a>
+		@@include('components/bem-blocks/_arrow.html')
+		<div class="breadcrumbs__link active">Заказать карты</div>
 	</div>
-	<main class="main question-page">
-		@@include('components/page-blocks/_questions.html', {
-			class: 'title faq'
-		})
+	</div>
+	<main class="main">
+		@@include('components/order/index.html')
 	</main>
 	@@include('components/page-blocks/_footer.html')
 	@@include('components/bem-blocks/_top-btn.html')
 	@@include('components/page-blocks/_scripts.html')
+
+	<script>
+		const phoneQuestion = document.getElementById('orderPhone');
+		IMask(phoneQuestion, maskOptions);
+	</script>
 </body>
 
 </html>

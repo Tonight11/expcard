@@ -1,0 +1,113 @@
+.order {
+	padding-bottom: 100px;
+
+	@media screen and (max-width: 480px) {
+		padding-bottom: 60px;
+	}
+	&__container {
+	}
+
+	&__inner {
+	}
+
+	&__top {
+		margin-bottom: 80px;
+
+		@media screen and (max-width: 480px) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__title {
+	}
+
+	&__subtitle {
+	}
+
+	&__text {
+		margin-bottom: 20px;
+
+		color: var(--font-color);
+	}
+
+	&__bottom {
+		display: flex;
+		gap: 8%;
+
+		@media screen and (max-width: 1019px) {
+			flex-direction: column-reverse;
+			align-items: center;
+			gap: 40px;
+		}
+
+		@media screen and (max-width: 640px) {
+			align-items: stretch;
+		}
+	}
+
+	&__form {
+		flex: 0 1 50%;
+
+		@media screen and (max-width: 640px) {
+			flex: 0 1 100%;
+		}
+	}
+
+	&__info {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		color: var(--font-color);
+	}
+
+	&__info-icon {
+	}
+
+	&__arrow {
+		width: 62px;
+		height: 62px;
+
+		transform: rotate(180deg);
+
+		@media screen and (max-width: 1019px) {
+			transform: rotate(90deg);
+		}
+
+		@media screen and (max-width: 480px) {
+			width: 40px;
+			height: 40px;
+		}
+
+		& path {
+			fill: var(--main-color);
+		}
+	}
+
+	&__info-text {
+		max-width: 380px;
+
+		font-size: 18px;
+
+		@media screen and (max-width: 480px) {
+			font-size: 16px;
+		}
+	}
+}
+
+.form-order {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	&__part {
+		display: flex;
+		gap: 20px;
+
+		@media screen and (max-width: 640px) {
+			flex-direction: column;
+		}
+	}
+
+	&__btn {
+	}
+}

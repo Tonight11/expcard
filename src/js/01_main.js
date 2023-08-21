@@ -164,6 +164,7 @@ createApp({
 				console.log(error);
 			} finally {
 				resetForm();
+				questionPhone.value.value = '';
 			}
 		};
 
@@ -178,8 +179,6 @@ createApp({
 			errors.value.phone = false;
 			errors.value.check = false;
 			errors.value.email = false;
-			quizNumber.value.value = '';
-			questionPhone.value.value = '';
 		};
 
 		const isFormValid = computed(() => {
@@ -240,21 +239,148 @@ createApp({
 			}
 
 			try {
-				alert(JSON.stringify({
-					'Цена': selectedPrice.value,
-					'Что-то': selectedOption.value,
-					'Имя': name.value,
-					'Номер': quizNumber.value.value
-				}));
-				currentStep.value++
+				alert(
+					JSON.stringify({
+						Цена: selectedPrice.value,
+						'Что-то': selectedOption.value,
+						Имя: name.value,
+						Номер: quizNumber.value.value,
+					})
+				);
+				currentStep.value++;
 			} catch (error) {
 				console.log(error);
 			} finally {
 				resetForm();
+				quizNumber.value.value = '';
+			}
+		};
+
+		// order Validation
+
+		const orderName = ref('');
+		const orderEmail = ref('');
+		const orderCheck = ref(false);
+		const orderCard = ref('');
+		const orderPhone = ref(null);
+		const orderCompany = ref('');
+		const orderError = ref({
+			name: false,
+			phone: false,
+			check: false,
+			email: false,
+		});
+
+		const validateOrderPhone = () => {
+			let phoneValue = orderPhone.value ? orderPhone.value.value : '';
+			console.log(phoneValue);
+			if (phoneValue.length === 17) {
+				phoneValue = phoneValue.substring(phoneValue.length - 1, 1);
+			}
+			if (phoneValue.length === 0) {
+				orderError.value.phone = true;
+			} else if (!phoneRegex.test(phoneValue)) {
+				orderError.value.phone = true;
+			} else {
+				orderError.value.phone = false;
+			}
+		};
+
+		const checkOrderPhoneValidate = () => {
+			if (liveErr.value) {
+				validateOrderPhone();
+			}
+		};
+
+		const validateOrderName = () => {
+			orderError.value.name = orderName.value.length === 0;
+		};
+		const validateOrderCheck = () => {
+			orderError.value.check = !orderCheck.value;
+		};
+
+		const validateOrderEmail = () => {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (orderEmail.value.length === 0) {
+				orderError.value.email = false;
+				return;
+			}
+			if (orderEmail.value.length > 0) {
+				orderError.value.email = !emailRegex.test(orderEmail.value);
+			}
+		};
+
+		const filterOrderName = () => {
+			orderName.value = orderName.value.replace(
+				/[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g,
+				''
+			);
+		};
+
+		watch([orderName, orderCheck, orderEmail], currentValue => {
+			if (liveErr.value) {
+				validateOrderName();
+				validateOrderCheck();
+				validateOrderEmail();
+			}
+		});
+
+		const validateOrderForm = () => {
+			validateOrderName();
+			validateOrderPhone();
+			validateOrderCheck();
+			validateOrderEmail();
+		};
+
+		const isOrderFormValid = computed(() => {
+			return !Object.values(orderError.value).some(error => error);
+		});
+
+		const submitOrder = () => {
+			validateOrderForm();
+			if (!isOrderFormValid.value) {
+				liveErr.value = true;
+				return;
+			}
+
+			try {
+				console.log({
+					name: orderName.value,
+					phone: orderPhone.value.value,
+					email: orderEmail.value || 'Нет',
+					check: orderCheck.value,
+					card: orderCard.value,
+					company: orderCompany.value,
+				});
+				closeModal();
+			} catch (error) {
+				console.log(error);
+			} finally {
+				orderName.value = '';
+				orderPhone.value.value = '';
+				orderEmail.value = '';
+				orderCheck.value = false;
+				orderCard.value = '';
+				orderCompany.value = '';
 			}
 		};
 
 		return {
+			orderError,
+			orderName,
+			orderEmail,
+			orderCheck,
+			orderCard,
+			orderCompany,
+			filterOrderName,
+			validateOrderName,
+			validateOrderCheck,
+			validateOrderEmail,
+			orderCard,
+			orderCheck,
+			orderPhone,
+			submitOrder,
+			checkOrderPhoneValidate,
 			options,
 			quizNumber,
 			validateQuizPhone,
@@ -284,8 +410,6 @@ createApp({
 		};
 	},
 }).mount('#app');
-
-function quiz() {}
 
 const swiper = new Swiper('.swiper-first', {
 	navigation: {
@@ -539,25 +663,25 @@ btnTheme.forEach(i => {
 const accordionItems = document.querySelectorAll('.question__item');
 
 accordionItems.forEach(item => {
-    const title = item.querySelector('.question__name');
+	const title = item.querySelector('.question__name');
 
-    title.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
+	title.addEventListener('click', () => {
+		const isActive = item.classList.contains('active');
 
-        closeAllItems();
-        
-        if (!isActive) {
-            item.classList.add('active');
-        }
-    });
+		closeAllItems();
+
+		if (!isActive) {
+			item.classList.add('active');
+		}
+	});
 });
 
 function closeAllItems() {
-    const openItems = document.querySelectorAll('.question__item.active');
-    
-    openItems.forEach(item => {
-        item.classList.remove('active');
-    });
+	const openItems = document.querySelectorAll('.question__item.active');
+
+	openItems.forEach(item => {
+		item.classList.remove('active');
+	});
 }
 
 const phone = document.getElementById('phone');

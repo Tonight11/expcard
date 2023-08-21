@@ -24,13 +24,11 @@
 		<div class="breadcrumbs__container container">
 			<a href="/index.html" class="breadcrumbs__link">Главная</a>
 			@@include('components/bem-blocks/_arrow.html')
-			<div class="breadcrumbs__link active">Вопросы и ответы </div>
+			<div class="breadcrumbs__link active">Электронный документооборот </div>
 		</div>
 	</div>
-	<main class="main question-page">
-		@@include('components/page-blocks/_questions.html', {
-			class: 'title faq'
-		})
+	<main class="main">
+		@@include('components/page-blocks/_edo.html')
 	</main>
 	@@include('components/page-blocks/_footer.html')
 	@@include('components/bem-blocks/_top-btn.html')
