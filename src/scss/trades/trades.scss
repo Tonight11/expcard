@@ -1,5 +1,5 @@
 .trade {
-	padding-bottom: 100px;	
+	padding-bottom: 100px;
 	&__container {
 	}
 
@@ -26,14 +26,7 @@
 	&__text {
 		margin-bottom: 20px;
 
-		font-size: 18px;
-		line-height: 1.6;
-
 		color: var(--font-color);
-
-		@media screen and (max-width: 1019px) {
-			font-size: 15px;
-		}
 	}
 
 	&__btn {

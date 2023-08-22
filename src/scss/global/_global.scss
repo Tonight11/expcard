@@ -72,7 +72,6 @@ a {
 
 img {
 	display: block;
-	max-width: 100%;
 	height: auto;
 }
 
@@ -204,5 +203,16 @@ textarea {
 		margin: 0 0 17px;
 
 		font: 500 20px/24px Montserrat;
+	}
+}
+
+.text {
+	font-size: 18px;
+	line-height: 1.6;
+
+	color: var(--font-color);
+
+	@media screen and (max-width: 1019px) {
+		font-size: 15px;
 	}
 }
